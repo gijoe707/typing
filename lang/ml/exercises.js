@@ -1,0 +1,28 @@
+// lang/ml/exercises.js — Malayalam exercises for the keyboard tutor
+window.EXERCISES = [
+    { id: 1, phase: 1, title: 'Home Row - അ ക', subtitle: '2-letter drills', targetWPM: 10, text: 'അക കഅ അക കഅ അക കക അഅ കക അക കഅ' },
+    { id: 2, phase: 1, title: 'Home Row - ല ച', subtitle: '2-letter drills', targetWPM: 10, text: 'ലച ചല ലല ചച ലച ചല ലച ചല ലല ചല' },
+    { id: 3, phase: 1, title: 'Home Row - ന ട', subtitle: '2-letter drills', targetWPM: 10, text: 'നട ടന നന ടട നട ടന നട ടന നന ടന' },
+    { id: 4, phase: 1, title: 'Home Row Combo', subtitle: 'Combining home row keys', targetWPM: 12, text: 'അകല കലച ലചന ചനട നടക ടകല കലച ലചന' },
+    { id: 5, phase: 1, title: 'Home Row Words', subtitle: 'Simple words', targetWPM: 12, text: 'നല നകല കല അകല ചല നട കട લട നകട ചകല' },
+    { id: 6, phase: 2, title: 'Top Row - പ ത', subtitle: 'Top row introduction', targetWPM: 15, text: 'പത തപ പപ തത പത തപ പത തപ പപ തപ പത' },
+    { id: 7, phase: 2, title: 'Top Row - ര മ', subtitle: 'Top row expansion', targetWPM: 15, text: 'രം മര രര മം രം മര രം മര രര മര രം' },
+    { id: 8, phase: 2, title: 'Top Row - വ യ', subtitle: 'Top row expansion', targetWPM: 15, text: 'വയ യവ വവ യയ വയ യവ വയ യവ വവ യവ' },
+    { id: 9, phase: 2, title: 'Top Row Combo', subtitle: 'Top row combinations', targetWPM: 18, text: 'പതര തരം രമവ മവയ വയപ യപത പതര തരം' },
+    { id: 10, phase: 2, title: 'Bottom Row - ഞ ഴ', subtitle: 'Bottom row introduction', targetWPM: 15, text: 'ഞഴ ഴഞ ഞഞ ഴഴ ഞഴ ഴഞ ഞഴ ഴഞ ഞഞ ഴഞ' },
+    { id: 11, phase: 2, title: 'Bottom Row - ഺ ണ', subtitle: 'Bottom row expansion', targetWPM: 15, text: 'ഺണ ണഺ ഺഺ ണണ ഺണ ണഺ ഺണ ണഺ ഺഺ ണഺ' },
+    { id: 12, phase: 2, title: 'All Rows Combo', subtitle: 'Full keyboard practice', targetWPM: 20, text: 'നല്ല വല്ല പല്ല തല്ല കല്ല മല്ല' },
+    { id: 13, phase: 3, title: 'കേരളം - ഭാഷ', subtitle: 'Malayalam text', targetWPM: 20, text: 'കേരളത്തിന്റെ സാംസ്കൃതിക പരമ്പരയും സാനിധ്യവും ലോകത്തിലേക്ക് അനന്തശ്രോതസായി' },
+    { id: 14, phase: 3, title: 'പഠനം - 1', subtitle: 'Book excerpts', targetWPM: 22, text: 'വിദ്യാഭ്യാസം നാളിതാണ് സമാജത്തിന്റെ സ്തംഭം മനുഷ്യനെ സ്വതന്ത്രനാക്കുന്ന വിന്ദു' },
+    { id: 15, phase: 3, title: 'കവിത - 1', subtitle: 'Poetry practice', targetWPM: 22, text: 'നാടിനെ സ്നേഹിക്കുന്നവര്‍ നിയതരായി തെരഞ്ഞെടുത്തത് നാടിനെ പരിപാലിക്കുന്നതിനായി' },
+    { id: 16, phase: 3, title: 'വാണിജ്യം', subtitle: 'Commerce text', targetWPM: 25, text: 'വ്യാപാരത്തെ പോലെ കൃഷിയും ആയിരിക്കേണ്ടത് ലാഭകരവും നിരന്തരവുമായ സാധനം' },
+    { id: 17, phase: 3, title: 'അദ്ധ്യാപനം', subtitle: 'Teaching excerpt', targetWPM: 25, text: 'അദ്ധ്യാപകന്‍ സമാജത്തിന്റെ ഭരണകര്‍ത്താവാണ് അവന്റെ പ്രഭാവം നിത്യവും നേരിടപ്പെടുന്നത്' },
+    { id: 18, phase: 3, title: 'സാഹിത്യം', subtitle: 'Literature text', targetWPM: 28, text: 'സാഹിത്യത്തിന്റെ സുഖസാദ്ധ്യത നിഷ്കാരണമായ സംഭോഗത്തിലും പരാധീനതയുടെ വേദന' },
+    { id: 19, phase: 3, title: 'സൃജനാത്മകത', subtitle: 'Creative writing', targetWPM: 28, text: 'സൃജനാത്മകത്വമാണ് ജീവിതത്തിന്റെ സത്യസാരം അത് മനുഷ്യനെ നിരനിരയായ അനവദ്യതയിലേക്ക്' },
+    { id: 20, phase: 3, title: 'സ്വാതന്ത്ര്യം', subtitle: 'Freedom text', targetWPM: 30, text: 'സ്വാതന്ത്ര്യം മനുഷ്യന്റെ അന്തരീക്ഷമാണ് അതില്ലാതെ അവന്റെ ജീവിതം കഠോരവും നിരാശാജനകവും' },
+    { id: 21, phase: 3, title: 'കലാരൂപങ്ങള്‍', subtitle: 'Art forms', targetWPM: 30, text: 'കലാരൂപങ്ങളിലെ ഏകത്വവും വൈവിധ്യവും മനുഷ്യജീവിതത്തിന്റെ സാര്വികത പ്രകാശിപ്പിക്കുന്നുണ്ട്' },
+    { id: 22, phase: 3, title: 'പ്രകൃതി', subtitle: 'Nature text', targetWPM: 32, text: 'പ്രകൃതി നമ്മുടെ ജന്മദാത്രിയാണ് അവളുടെ കോളാഹലവും നിശ്ശബ്ദതയും നമ്മെ ജീവിതത്തിലേക്ക് ക്ഷണിക്കുന്നു' },
+    { id: 23, phase: 3, title: 'സംബന്ധം', subtitle: 'Relationship text', targetWPM: 35, text: 'സംബന്ധങ്ങളുടെ പരിപാലനം നിപുണതയെ ആവശ്യമാക്കുന്നു സ്നേഹവും സ്വാര്ഥത്യാഗവും നിത്യകര്‍മ്മമാണിത്' },
+    { id: 24, phase: 4, title: 'മലയാളം സംഖ്യകള്‍ ൧-൫', subtitle: 'Malayalam Numerals 1-5', targetWPM: 20, text: '൧ ൨ ൩ ൪ ൫ ൧൨ ൨൩ ൩൪ ൪൫ ൧൨൩ ൨൩൪ ൩൪൫' },
+    { id: 25, phase: 4, title: 'മലയാളം സംഖ്യകള്‍ ൬-൰', subtitle: 'Malayalam Numerals 6-10', targetWPM: 20, text: '൬ ൭ ൮ ൯ ൰ ൬൭ ൭൮ ൮൯ ൯൰ ൬൭൮ ൭൮൯ ൮൯൰' }
+];

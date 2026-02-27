@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ta">
+<!--
+  Copyleft (C) 2024. This software is free: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or any later version.
+  See <https://www.gnu.org/licenses/> for details.
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>தமிழ் தட்டச்சு பயிற்சி | Tamil Typing Tutor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@300;400;500;600;700&family=Noto+Serif+Tamil:wght@400;600&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JS8DMZJPCN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-JS8DMZJPCN');
+  </script>
+  <!-- Inline languages manifest for file:// usability; kept in sync with lang/languages.json -->
+  <script id="languages-manifest" type="application/json">[
+    {"code":"ta","name":"Tamil","nativeName":"தமிழ்","appTitle":"தமிழ் தட்டச்சு பயிற்சி","appSubtitle":"Tamil 99 Typing Tutor","logoChar":"த","levelsLabel":"பாடங்கள் / Levels","typeLabel":"தட்டச்சு / Type","levelsViewTitle":"பாட நிலைகள்","levelsViewSubtitle":"CHOOSE YOUR LESSON · 25 LEVELS ACROSS 4 PHASES","backButtonLabel":"← பாடங்கள்"},
+    {"code":"ml","name":"Malayalam","nativeName":"മലയാളം","appTitle":"മലയാളം ടൈപ്പിംഗ് പരിശീലനം","appSubtitle":"Malayalam Typing Tutor","logoChar":"മ","levelsLabel":"പാഠങ്ങള്‍ / Lessons","typeLabel":"ടൈപ്പ് / Type","levelsViewTitle":"പാഠ നിലകൾ","levelsViewSubtitle":"നിങ്ങളുടെ പാഠം തിരഞ്ഞെടുക്കുക · 4 PHASES വിലെ 25 LEVELS","backButtonLabel":"← പാഠങ്ങള്‍"},
+    {"code":"kn","name":"Kannada","nativeName":"ಕನ್ನಡ","appTitle":"ಕನ್ನಡ ಟೈಪಿಂಗ್ ತರಬೇತಿ","appSubtitle":"Kannada Typing Tutor","logoChar":"ಕ","levelsLabel":"ಪಾಠಗಳು / Lessons","typeLabel":"ಟೈಪ್ / Type","levelsViewTitle":"ಪಾಠ ಮಟ್ಟಗಳು","levelsViewSubtitle":"ಕನ್ನಡ ಅಭ್ಯಾಸ ಪಠ್ಯಗಳು","backButtonLabel":"← ಪಾಠಗಳು"},
+    {"code":"te","name":"Telugu","nativeName":"తెలుగు","appTitle":"తెలుగు టైపింగ్ పరిజ్ఞానం","appSubtitle":"Telugu Typing Tutor","logoChar":"త","levelsLabel":"పాఠ్యాలు / Lessons","typeLabel":"టైపు / Type","levelsViewTitle":"పాఠాల స్థాయిలు","levelsViewSubtitle":"తెలుగు అభ్యాస పాఠాలు","backButtonLabel":"← పాఠ్యాలు"}
+  ]</script>
+</head>
+
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">
+        <div class="logo-icon" id="logo-icon">த</div>
+        <div class="logo-text">
+          <h1 id="app-title">தமிழ் தட்டச்சு பயிற்சி</h1>
+          <p id="app-subtitle">Tamil 99 Typing Tutor</p>
+        </div>
+      </div>
+      <nav>
+        <select class="language-selector" id="language-selector" onchange="changeLanguage(this.value)"></select>
+        <button class="nav-btn active" id="nav-levels" onclick="showView('levels')" data-ta="பாடங்கள் / Levels"
+          data-ml="പാഠങ്ങള്‍ / Lessons">பாடங்கள் / Levels</button>
+        <button class="nav-btn" id="nav-type" onclick="showView('typing')" style="display:none"
+          data-ta="தட்டச்சு / Type" data-ml="ടൈപ്പ് / Type">தட்டச்சு / Type</button>
+      </nav>
+    </header>
+
+    <!-- LEVELS VIEW -->
+    <div class="view active" id="view-levels">
+      <div class="levels-header">
+        <h2>பாட நிலைகள்</h2>
+        <p>CHOOSE YOUR LESSON · 25 LEVELS ACROSS 4 PHASES</p>
+      </div>
+      <div id="levels-container"></div>
+    </div>
+
+    <!-- TYPING VIEW -->
+    <div class="view" id="view-typing">
+      <div class="typing-outer">
+        <!-- Side Nav -->
+        <aside class="side-nav" id="side-nav">
+          <div class="side-nav-header">
+            <span class="side-nav-title" id="side-nav-title">பாடங்கள்</span>
+            <button class="side-nav-toggle" id="side-nav-toggle" onclick="toggleSideNav()"
+              title="Toggle lessons">☰</button>
+          </div>
+          <div class="side-nav-list" id="side-nav-list"></div>
+        </aside>
+        <!-- Main content -->
+        <div class="typing-layout">
+          <!-- Top bar -->
+          <div class="typing-topbar">
+            <div class="level-info">
+              <h2 id="current-level-title">—</h2>
+              <p id="current-level-subtitle">—</p>
+            </div>
+            <div style="display:flex;gap:10px;align-items:center">
+              <span id="level-indicator" style="font-size:11px;color:var(--text-muted);letter-spacing:.1em"></span>
+              <button class="back-btn" id="back-btn" onclick="showView('levels')">← பாடங்கள்</button>
+            </div>
+          </div>
+
+          <!-- Dashboard -->
+          <div class="dashboard">
+            <div class="stat-card">
+              <div class="stat-value" id="wpm-display">0</div>
+              <div class="stat-label">WPM</div>
+            </div>
+            <div class="stat-card accuracy">
+              <div class="stat-value" id="acc-display">100%</div>
+              <div class="stat-label">Accuracy</div>
+            </div>
+            <div class="stat-card errors">
+              <div class="stat-value" id="err-display">0</div>
+              <div class="stat-label">Errors</div>
+            </div>
+            <div class="stat-card progress">
+              <div class="stat-value" id="prog-display">0 / 0</div>
+              <div class="stat-label">Progress</div>
+            </div>
+          </div>
+
+          <!-- Typing Area -->
+          <div class="typing-area-wrapper" id="typing-wrapper" onclick="focusInput()">
+            <div class="error-flash" id="error-flash"></div>
+            <div class="progress-bar-outer">
+              <div class="progress-bar-inner" id="progress-bar"></div>
+            </div>
+            <div id="text-display"></div>
+            <div class="start-prompt" id="start-prompt">⌨ Click here or start typing to begin</div>
+            <input type="text" class="hidden-input" id="hidden-input" autocomplete="off" autocorrect="off"
+              autocapitalize="off" spellcheck="false">
+          </div>
+
+          <!-- Finger Hint -->
+          <div class="finger-hint-bar">
+            <div class="current-key-display">
+              <div class="ckey-char" id="hint-char">—</div>
+              <div class="ckey-info">
+                <div class="ckey-label">Next Key</div>
+                <div class="ckey-finger">
+                  <span class="finger-dot" id="hint-dot" style="background:var(--text-muted)"></span>
+                  <span id="hint-finger">—</span>
+                </div>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="finger-legend">
+              <div class="legend-item"><span class="finger-dot" style="background:var(--pinky)"></span>Pinky</div>
+              <div class="legend-item"><span class="finger-dot" style="background:var(--ring)"></span>Ring</div>
+              <div class="legend-item"><span class="finger-dot" style="background:var(--middle)"></span>Middle</div>
+              <div class="legend-item"><span class="finger-dot" style="background:var(--index)"></span>Index</div>
+              <div class="legend-item"><span class="finger-dot" style="background:var(--thumb)"></span>Thumb</div>
+            </div>
+          </div>
+
+          <!-- Virtual Keyboard -->
+          <div class="keyboard-section">
+            <button class="keyboard-toggle-btn" id="keyboard-toggle-btn" title="Toggle keyboard visibility">
+              <span class="toggle-icon">⌨</span>
+              <span class="toggle-text" id="toggle-text">Hide</span>
+            </button>
+            <div class="keyboard-wrapper" id="keyboard-wrapper">
+              <div class="keyboard-rows" id="virtual-keyboard"></div>
+            </div>
+          </div>
+
+        </div><!-- end typing-layout -->
+      </div><!-- end typing-outer -->
+    </div>
+  </div>
+
+  <!-- Result Modal -->
+  <div class="modal-overlay" id="result-modal">
+    <div class="modal">
+      <div class="modal-title" id="result-title">நல்லது! Well Done!</div>
+      <div class="modal-subtitle" id="result-subtitle">Level Complete</div>
+      <div class="stars-display" id="stars-display"></div>
+      <div id="pb-container"></div>
+      <div class="result-grid">
+        <div class="result-stat">
+          <div class="result-val" id="r-wpm">0</div>
+          <div class="result-lbl">WPM</div>
+        </div>
+        <div class="result-stat">
+          <div class="result-val" id="r-acc">0%</div>
+          <div class="result-lbl">Accuracy</div>
+        </div>
+        <div class="result-stat">
+          <div class="result-val" id="r-err">0</div>
+          <div class="result-lbl">Errors</div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-secondary" onclick="retryLevel()">↺ Retry</button>
+        <button class="btn-primary" onclick="nextLevel()">Next Level →</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <!-- External JS: keyboard map and app logic (language specs loaded dynamically) -->
+  <script src="keymap.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

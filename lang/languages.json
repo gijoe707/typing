@@ -1,0 +1,54 @@
+[
+    {
+        "code": "ta",
+        "name": "Tamil",
+        "nativeName": "தமிழ்",
+        "appTitle": "தமிழ் தட்டச்சு பயிற்சி",
+        "appSubtitle": "Tamil 99 Typing Tutor",
+        "logoChar": "த",
+        "levelsLabel": "பாடங்கள் / Levels",
+        "typeLabel": "தட்டச்சு / Type",
+        "levelsViewTitle": "பாட நிலைகள்",
+        "levelsViewSubtitle": "CHOOSE YOUR LESSON · 25 LEVELS ACROSS 4 PHASES",
+        "backButtonLabel": "← பாடங்கள்"
+    },
+    {
+        "code": "ml",
+        "name": "Malayalam",
+        "nativeName": "മലയാളം",
+        "appTitle": "മലയാളം ടൈപ്പിംഗ് പരിശീലനം",
+        "appSubtitle": "Malayalam Typing Tutor",
+        "logoChar": "മ",
+        "levelsLabel": "പാഠങ്ങള്‍ / Lessons",
+        "typeLabel": "ടൈപ്പ് / Type",
+        "levelsViewTitle": "പാഠ നിലകൾ",
+        "levelsViewSubtitle": "നിങ്ങളുടെ പാഠം തിരഞ്ഞെടുക്കുക · 4 PHASES വിലെ 25 LEVELS",
+        "backButtonLabel": "← പാഠങ്ങള്‍"
+    },
+    {
+        "code": "kn",
+        "name": "Kannada",
+        "nativeName": "ಕನ್ನಡ",
+        "appTitle": "ಕನ್ನಡ ಟೈಪಿಂಗ್ ತರಬೇತಿ",
+        "appSubtitle": "Kannada Typing Tutor",
+        "logoChar": "ಕ",
+        "levelsLabel": "ಪಾಠಗಳು / Lessons",
+        "typeLabel": "ಟೈಪ್ / Type",
+        "levelsViewTitle": "ಪಾಠ ಮಟ್ಟಗಳು",
+        "levelsViewSubtitle": "ಕನ್ನಡ ಅಭ್ಯಾಸ ಪಠ್ಯಗಳು",
+        "backButtonLabel": "← ಪಾಠಗಳು"
+    },
+    {
+        "code": "te",
+        "name": "Telugu",
+        "nativeName": "తెలుగు",
+        "appTitle": "తెలుగు టైపింగ్ పరిజ్ఞానం",
+        "appSubtitle": "Telugu Typing Tutor",
+        "logoChar": "త",
+        "levelsLabel": "పాఠ్యాలు / Lessons",
+        "typeLabel": "టైపు / Type",
+        "levelsViewTitle": "పాఠాల స్థాయిలు",
+        "levelsViewSubtitle": "తెలుగు అభ్యాస పాఠాలు",
+        "backButtonLabel": "← పాఠ్యాలు"
+    }
+]
